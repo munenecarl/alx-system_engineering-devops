@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # This script displays Best School 10 times using if statement but prints Hi instead of Best School
 
 for i in {1..10}

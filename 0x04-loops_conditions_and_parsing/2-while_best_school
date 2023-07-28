@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # This script dislpays Best School 10 times unsing while loop
 
 i=1

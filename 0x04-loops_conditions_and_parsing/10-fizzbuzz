@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # This script displays 1 to 100 numbers but prints FizzBuzz for multiples of 3 and 5,
 # Fizz for multiples of 3 and Buzz for multiples of 5
 
