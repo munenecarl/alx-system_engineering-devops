@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # configures an ubuntu server
+
 CONTAINER_ID=$(docker ps -q)
 
 if [ -z "$CONTAINER_ID" ]; then
@@ -7,14 +8,14 @@ if [ -z "$CONTAINER_ID" ]; then
     exit 1
 fi
 
-docker cp "$CONTAINER_ID:/etc/hosts" ~/hosts.new
+TEMP_HOSTS_FILE=$(mktemp):
 
-echo "127.0.0.2 localhost" >> ~/hosts.new
-echo "8.8.8.8 facebook.com" >> ~/hosts.new
+echo "127.0.0.2 localhost" >> "$TEMP_HOSTS_FILE"
+echo "8.8.8.8 facebook.com" >> "$TEMP_HOSTS_FILE"
 
-docker cp ~/hosts.new "$CONTAINER_ID:/etc/hosts"
+docker cp "$TEMP_HOSTS_FILE" "$CONTAINER_ID:/etc/hosts"
 
-rm ~/hosts.new
+rm "$TEMP_HOSTS_FILE"
 
 docker exec -it "$CONTAINER_ID" cat /etc/hosts
 
