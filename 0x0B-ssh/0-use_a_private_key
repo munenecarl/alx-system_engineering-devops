@@ -1,6 +1,7 @@
-#!usr/bin/env bash/
+#!/usr/bin/env bash/
 #connects to the remote server
 server_address="your_server_ip_or_hostname"
 private_key="~/.ssh/school"
 username="ubuntu"
 ssh -i $private_key $username@$server_address
+
