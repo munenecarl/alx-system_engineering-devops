@@ -1,0 +1,115 @@
+ssh v ubuntu@54.197.109.147
+OpenSSH_8.9p1 Ubuntu-3ubuntu0.4, OpenSSL 3.0.2 15 Mar 2022
+debug1: Reading configuration data /home/munenecarl/.ssh/config
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: include /etc/ssh/ssh_config.d/*.conf matched no files
+debug1: /etc/ssh/ssh_config line 21: Applying options for *
+debug1: Connecting to 54.197.109.147 [54.197.109.147] port 22.
+debug1: Connection established.
+debug1: identity file /home/munenecarl/.ssh/id_rsa type 0
+debug1: identity file /home/munenecarl/.ssh/id_rsa-cert type -1
+debug1: identity file /home/munenecarl/.ssh/id_ecdsa type -1
+debug1: identity file /home/munenecarl/.ssh/id_ecdsa-cert type -1
+debug1: identity file /home/munenecarl/.ssh/id_ecdsa_sk type -1
+debug1: identity file /home/munenecarl/.ssh/id_ecdsa_sk-cert type -1
+debug1: identity file /home/munenecarl/.ssh/id_ed25519 type 3
+debug1: identity file /home/munenecarl/.ssh/id_ed25519-cert type -1
+debug1: identity file /home/munenecarl/.ssh/id_ed25519_sk type -1
+debug1: identity file /home/munenecarl/.ssh/id_ed25519_sk-cert type -1
+debug1: identity file /home/munenecarl/.ssh/id_xmss type -1
+debug1: identity file /home/munenecarl/.ssh/id_xmss-cert type -1
+debug1: identity file /home/munenecarl/.ssh/id_dsa type -1
+debug1: identity file /home/munenecarl/.ssh/id_dsa-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.4
+debug1: Remote protocol version 2.0, remote software version OpenSSH_8.2p1 Ubuntu-4ubuntu0.5
+debug1: compat_banner: match: OpenSSH_8.2p1 Ubuntu-4ubuntu0.5 pat OpenSSH* compat 0x04000000
+debug1: Authenticating to 54.197.109.147:22 as 'ubuntu'
+debug1: load_hostkeys: fopen /home/munenecarl/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256
+debug1: kex: host key algorithm: ssh-ed25519
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: SSH2_MSG_KEX_ECDH_REPLY received
+debug1: Server host key: ssh-ed25519 SHA256:7UgiMr0rvqBX7THY/9vmnm5hP0z368t+aHCcjkz2i6k
+debug1: load_hostkeys: fopen /home/munenecarl/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: hostkeys_find_by_key_hostfile: hostkeys file /home/munenecarl/.ssh/known_hosts2 does not exist
+debug1: hostkeys_find_by_key_hostfile: hostkeys file /etc/ssh/ssh_known_hosts does not exist
+debug1: hostkeys_find_by_key_hostfile: hostkeys file /etc/ssh/ssh_known_hosts2 does not exist
+The authenticity of host '54.197.109.147 (54.197.109.147)' can't be established.
+ED25519 key fingerprint is SHA256:7UgiMr0rvqBX7THY/9vmnm5hP0z368t+aHCcjkz2i6k.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added '54.197.109.147' (ED25519) to the list of known hosts.
+debug1: rekey out after 134217728 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey in after 134217728 blocks
+debug1: Will attempt key: /home/munenecarl/.ssh/id_rsa RSA SHA256:toeTmxq2wFehbWhWABfnau0FRs7Yz5CUcvKnvyuY/yE
+debug1: Will attempt key: /home/munenecarl/.ssh/id_ecdsa
+debug1: Will attempt key: /home/munenecarl/.ssh/id_ecdsa_sk
+debug1: Will attempt key: /home/munenecarl/.ssh/id_ed25519 ED25519 SHA256:wuvMTW/SHiKWmHgjDVVoLttysAvph38xSPDdca2L9HI
+debug1: Will attempt key: /home/munenecarl/.ssh/id_ed25519_sk
+debug1: Will attempt key: /home/munenecarl/.ssh/id_xmss
+debug1: Will attempt key: /home/munenecarl/.ssh/id_dsa
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_input_ext_info: server-sig-algs=<ssh-ed25519,sk-ssh-ed25519@openssh.com,ssh-rsa,rsa-sha2-256,rsa-sha2-512,ssh-dss,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ecdsa-sha2-nistp256@openssh.com>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Offering public key: /home/munenecarl/.ssh/id_rsa RSA SHA256:toeTmxq2wFehbWhWABfnau0FRs7Yz5CUcvKnvyuY/yE
+debug1: Server accepts key: /home/munenecarl/.ssh/id_rsa RSA SHA256:toeTmxq2wFehbWhWABfnau0FRs7Yz5CUcvKnvyuY/yE
+Authenticated to 54.197.109.147 ([54.197.109.147]:22) using "publickey".
+debug1: channel 0: new [client-session]
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+debug1: pledge: filesystem
+debug1: client_input_global_request: rtype hostkeys-00@openssh.com want_reply 0
+debug1: client_input_hostkeys: searching /home/munenecarl/.ssh/known_hosts for 54.197.109.147 / (none)
+debug1: client_input_hostkeys: searching /home/munenecarl/.ssh/known_hosts2 for 54.197.109.147 / (none)
+debug1: client_input_hostkeys: hostkeys file /home/munenecarl/.ssh/known_hosts2 does not exist
+debug1: Remote: /home/ubuntu/.ssh/authorized_keys:2: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding
+debug1: Remote: /home/ubuntu/.ssh/authorized_keys:2: key options: agent-forwarding port-forwarding pty user-rc x11-forwarding
+debug1: Sending environment.
+debug1: channel 0: setting env LANG = "C.UTF-8"
+debug1: client_global_hostkeys_private_confirm: server used untrusted RSA signature algorithm ssh-rsa for key 0, disregarding
+Learned new hostkey: ECDSA SHA256:ftnZHSe4ujqbmHtKnnufhv54bO7bcJa2H1kwdFwy/Oo
+Adding new key for 54.197.109.147 to /home/munenecarl/.ssh/known_hosts: ecdsa-sha2-nistp256 SHA256:ftnZHSe4ujqbmHtKnnufhv54bO7bcJa2H1kwdFwy/Oo
+debug1: update_known_hosts: known hosts file /home/munenecarl/.ssh/known_hosts2 does not exist
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.15.0-1021-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Nov 26 23:24:15 UTC 2023
+
+  System load:  0.08              Processes:             98
+  Usage of /:   7.7% of 19.20GB   Users logged in:       0
+  Memory usage: 22%               IPv4 address for eth0: 10.247.179.77
+  Swap usage:   0%
+
+0 updates can be applied immediately.
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.-
