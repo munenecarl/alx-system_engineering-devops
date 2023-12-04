@@ -1,0 +1,14 @@
+#!/bin/env bash
+# sets up nginx
+
+sudo apt-get update
+sudo apt-get install -y nginx
+echo "server {
+    listen 80;
+    location / {
+        return 200 '<html>Hello World!</html>\n';
+        add_header Content-Type text/html;
+    }
+}" > default
+sudo cp default /etc/nginx/sites-available/default
+sudo service nginx restart
