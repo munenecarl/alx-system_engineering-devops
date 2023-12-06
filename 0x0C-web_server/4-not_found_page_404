@@ -1,0 +1,21 @@
+#!/bin/bash
+# Sets Nginx server with custom 404 page
+sudo apt-get update
+sudo apt-get install -y nginx
+echo "server {
+    listen 80;
+    etag on;
+    location = / {
+        return 200 '<html>Hello World!</html>\n';
+        add_header Content-Type text/html;
+    }
+    location = /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+    error_page 404 /404.html;
+    location = /404.html {
+        return 404 'Ceci n\'est pas une page\n';
+    }
+}" > default
+sudo cp default /etc/nginx/sites-available/default
+sudo service nginx restart
