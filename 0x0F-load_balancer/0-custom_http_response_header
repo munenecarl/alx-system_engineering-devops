@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Sets up a new Ubuntu machine with a custom Nginx configuration
+
+# Install Nginx
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# Create a new Nginx configuration with a custom header
+echo "server {
+    listen 80;
+    location / {
+        add_header X-Served-By \$hostname;
+        return 200 '<html>Hello World!</html>\n';
+        add_header Content-Type text/html;
+    }
+}" > default
+
+# Copy the new configuration to the sites-available directory
+sudo cp default /etc/nginx/sites-available/default
+
+# Restart Nginx to apply the changes
+sudo service nginx restart
