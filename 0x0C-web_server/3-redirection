@@ -2,7 +2,7 @@
 # sets up nginx to allow redirections
 sudo apt-get update
 sudo apt-get install -y nginx
-echo "server {
+printf "server {
 	listen 80;
 	location / {
 		return 200 '<html>Hello World!</html>\n';

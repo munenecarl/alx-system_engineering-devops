@@ -1,21 +1,33 @@
-#!/bin/bash
-# Sets Nginx server with custom 404 page
+#!/usr/bin/env bash
+# Handles 404 error redirection
+
+# Install Nginx server if not already installed
 sudo apt-get update
 sudo apt-get install -y nginx
-echo "server {
+
+# Create files
+sudo mkdir /etc/nginx/html
+sudo touch /etc/nginx/html/index.html
+sudo echo "Hello World!" | sudo tee /var/www/html/index.html
+sudo touch /etc/nginx/html/404.html
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+# str="\\\terror_page 404 /404.html;\n\tlocation /404 {\n\t\troot /etc/nginx/html;\n\t\tinternal;\n\t}\n"
+# sudo sed -i "9i $str" /etc/nginx/sites-available/default
+printf %s "server {
     listen 80;
-    etag on;
-    location = / {
-        return 200 '<html>Hello World!</html>\n';
-        add_header Content-Type text/html;
-    }
-    location = /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    listen [::]:80 default_server;
+    root   /etc/nginx/html;
+    index  index.html index.htm;
+    location /redirect_me {
+        return 301 http://youtube.com/UCw4X_zayaSiuVYcqWpiaSWw;
     }
     error_page 404 /404.html;
-    location = /404.html {
-        return 404 'Ceci n\'est pas une page\n';
+    location /404 {
+    	root /etc/nginx/html;
+	internal;
     }
-}" > default
-sudo cp default /etc/nginx/sites-available/default
+}" > /etc/nginx/sites-available/default
+
+# restart the server
 sudo service nginx restart
