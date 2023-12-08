@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Define a function to get record information
+get_record_info() {
+    local domain=$1
+    local subdomain=$2
+
+    # Run dig command and parse the output
+    local record_info
+    record_info=$(dig "$subdomain"."$domain" | awk -v subdomain="$subdomain" '
+        /ANSWER SECTION:/ {
+            getline
+            if ($4 == "A") {
+                print "The subdomain " subdomain " is a " $4 " record and points to " $5
+            }
+        }
+    ')
+
+    echo "$record_info"
+}
+
+# Check if subdomain is provided
+if [ -z "$2" ]; then
+    # If no subdomain is provided, get info for all subdomains
+    for subdomain in www lb-01 web-01 web-02; do
+        get_record_info "$1" $subdomain
+    done
+else
+    # If subdomain is provided, get info only for that subdomain
+    get_record_info "$1" "$2"
+fi
