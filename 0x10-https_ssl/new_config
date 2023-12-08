@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Define the path to the HAProxy configuration file
+HAPROXY_CFG="/etc/haproxy/haproxy.cfg"
+
+# Backup the existing configuration file
+sudo cp $HAPROXY_CFG $HAPROXY_CFG.bak
+
+# Replace the existing configuration with the new one
+sudo cp 1-haproxy_ssl_termination $HAPROXY_CFG
+
+# Restart HAProxy to apply the changes
+sudo systemctl restart haproxy
