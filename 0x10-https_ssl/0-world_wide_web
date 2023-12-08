@@ -1,6 +1,6 @@
 #!/bin/bash
+# Gets record information
 
-# Define a function to get record information
 get_record_info() {
     local domain=$1
     local subdomain=$2
