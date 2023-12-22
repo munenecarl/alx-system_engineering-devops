@@ -4,3 +4,5 @@ docker exec -it "$container_id" service apache2 status
 docker exec -it "$container_id" service apache2 start
 docker exec -it "$container_id" cat /etc/apache2/sites-enabled/000-default.conf
 docker exec -it "$container_id" bash -c 'echo "Hello Holberton" > /var/www/html/index.html'
+docker exec -it "$container_id" service apache2 restart
+docker exec -it "$container_id" exit
