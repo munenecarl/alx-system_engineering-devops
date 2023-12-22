@@ -1,15 +1,4 @@
-# Access the Docker container's shell
-docker exec -it <container-id> /bin/bash
-
-# Inside the Docker container
-service apache2 status # Check if Apache is running
-service apache2 start # Start Apache if it's not running
-
-# Check Apache configuration and DocumentRoot directory
-cat /etc/apache2/sites-enabled/000-default.conf
-
-# Create a simple HTML file in the DocumentRoot directory
-echo "Hello Holberton" > /var/www/html/index.html
-
-# Exit the Docker container
-exit
+#!/usr/bin/env bash
+# This script will install apache2 and create a index.html file
+echo 'Hello Holberton' > /var/www/html/index.html
+sudo service apache2 start
