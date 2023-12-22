@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-# This script will install apache2 and create a index.html file
-echo 'Hello Holberton' > /var/www/html/index.html
-sudo service apache2 start
+container_id=$(docker ps -q)
+docker exec -it $container_id service apache2 status
+docker exec -it $container_id service apache2 start
+docker exec -it $container_id cat /etc/apache2/sites-enabled/000-default.conf
+docker exec -it $container_id bash -c 'echo "Hello Holberton" > /var/www/html/index.html'
