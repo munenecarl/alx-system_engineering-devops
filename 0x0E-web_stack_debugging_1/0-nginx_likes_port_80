@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# an attempt to debug the stack
 container_id=$(docker ps -q)
 docker exec -it "$container_id" service apache2 status
 docker exec -it "$container_id" service apache2 start
