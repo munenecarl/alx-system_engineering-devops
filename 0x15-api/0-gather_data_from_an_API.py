@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Gathers data from the fake data API"""
 
 import requests

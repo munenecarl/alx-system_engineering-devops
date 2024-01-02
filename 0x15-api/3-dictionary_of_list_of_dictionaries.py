@@ -1,7 +1,8 @@
+#!/usr/bin/python3
 """exports the tasks of all employees in json format"""
 
-import requests
 import json
+import requests
 
 def get_all_employees_todo_list():
 	""" Fetch all tasks for all users"""
