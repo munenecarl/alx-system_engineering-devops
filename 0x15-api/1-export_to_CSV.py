@@ -12,7 +12,7 @@ def get_employee_todo_list(employee_id):
 	todos = todos_response.json()
 
 	with open(f'{employee_id}.csv', 'w', newline='') as file:
-		writer = csv.writer(file)
+		writer = csv.writer(file, quoting=csv.QUOTE_ALL)
 		writer.writerow(["TASK_COMPLETED_STATUS", "TASK_TITLE"])
 		for todo in todos:
 			writer.writerow([employee_id, employee['name'], todo['completed'], todo['title']])
