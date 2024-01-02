@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Exports employee data to json"""
 import json
 import requests
 import sys
