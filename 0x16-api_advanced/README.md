@@ -1,0 +1,1 @@
+This is a project to learn about the more advanced concepts involving APIs for example: Authentication, Documentation e.t.c
