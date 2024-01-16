@@ -25,7 +25,7 @@ def count_words(subreddit, word_list, counts=None, after=None):
         counts = Counter()
 
     headers = {'User-Agent': 'my-app/0.0.1'}
-    url = f'https://www.reddit.com/r/{subreddit}/hot.json'
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     if after:
         url += f'?after={after}'
 
@@ -49,8 +49,3 @@ def count_words(subreddit, word_list, counts=None, after=None):
     else:
         count_words(subreddit, word_list, counts, data['after'])
 
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Please pass the subreddit to be checked.")
-    else:
-        print("{:d}".format(count_words(sys.argv(1), [x for x in sys.argv[2].split()])))
