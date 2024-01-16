@@ -1,4 +1,5 @@
-#!/usr/bin/env python 3
+#!/usr/bin/python 3
+"""Queries the Reddit API, parses the title of all hot articles, and counts occurrences of given keywords."""
 
 import requests
 from collections import Counter
@@ -6,6 +7,20 @@ import re
 import sys
 
 def count_words(subreddit, word_list, counts=None, after=None):
+    """
+    Queries the Reddit API, parses the title of all hot articles, and counts occurrences of given keywords.
+
+    Parameters:
+    subreddit (str): The name of the subreddit to query.
+    word_list (list): A list of keywords to count.
+    counts (Counter, optional): A Counter dictionary for keyword counts. Defaults to a new Counter if not supplied.
+    after (str, optional): The ID of the last post in the previous page. Defaults to None.
+
+    Returns:
+    None. The function prints a sorted count of the keywords in descending order by count and then alphabetically.
+    If no posts match or the subreddit is invalid, prints nothing.
+    """
+
     if counts is None:
         counts = Counter()
 
