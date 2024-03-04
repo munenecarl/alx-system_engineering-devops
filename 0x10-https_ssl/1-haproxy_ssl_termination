@@ -35,12 +35,12 @@ defaults
 
 frontend we0102
     bind *:80
-    bind *:443 ssl crt /etc/letsencrypt/live/www.carlmunene.tech/combined.pem
+    bind *:443 ssl crt /etc/letsencrypt/live/www.carlmunene.tech/fullchain.pem no-sslv3 no-tlsv10
     mode http
     http-request redirect scheme https unless { ssl_fc }
     default_backend web_backend
 
 backend web_backend
     balance roundrobin
-    server web01 54.197.109.147:80 check
-    server web02 100.25.171.68:80 check
+    server web01 54.146.79.104:80 check
+    server web02 52.73.255.159:80 check

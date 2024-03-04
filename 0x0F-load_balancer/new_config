@@ -1,28 +1,33 @@
-#!/usr/bin/env bash
-# Install Nginx server if not already installed
+#!/bin/bash
+
+# Install Nginx if not already installed
 sudo apt-get update
 sudo apt-get install -y nginx
 
-# Create files
-sudo mkdir -p /etc/nginx/html
-echo "Hello World!" | sudo tee /etc/nginx/html/index.html
-echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html
-
-printf %s "server {
+# Create Nginx configuration with custom header and error handling
+echo "server {
     listen 80;
     listen [::]:80 default_server;
     root   /etc/nginx/html;
     index  index.html index.htm;
+
     location / {
         add_header X-Served-By \$hostname;
         return 200 '<html>Hello World!</html>\n';
         add_header Content-Type text/html;
     }
+
     location /redirect_me {
         return 301 http://youtube.com/UCw4X_zayaSiuVYcqWpiaSWw;
     }
+
     error_page 404 /404.html;
 }" | sudo tee /etc/nginx/sites-available/default
 
-# restart the server
+# Create HTML files
+sudo mkdir -p /etc/nginx/html
+echo "Hello World!" | sudo tee /etc/nginx/html/index.html
+echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html
+
+# Restart Nginx to apply the changes
 sudo service nginx restart
